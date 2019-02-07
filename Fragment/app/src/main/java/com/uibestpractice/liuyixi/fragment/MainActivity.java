@@ -17,6 +17,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button.setOnClickListener(this);
         //动态添加Fragment
         replaceFragment(new RightFragment());
+
+
+        //这个id=right_fragment是在activity_layout中的id
+        RightFragment rightFragment = (RightFragment)getSupportFragmentManager().findFragmentById(R.id.right_fragment);
+        //这样获得Fragment的实例就可以获得Fragment中的的方法了
     }
 
     //给左侧按钮注册点击事件
