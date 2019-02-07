@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.right_layout,fragment);
+
+        //如果在事物提交前调用了FragmentTransaction 的addToBackStack(),它可以接收一个名字用于描述返回栈的状态，一般传入null即可
+        //addToBackStack用于将一个事物添加到返回栈
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 }
